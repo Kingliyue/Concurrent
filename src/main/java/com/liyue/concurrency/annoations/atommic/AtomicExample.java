@@ -9,6 +9,7 @@ import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 import java.util.concurrent.Semaphore;
 import java.util.concurrent.atomic.AtomicInteger;
+import java.util.concurrent.atomic.LongAdder;
 
 @Slf4j
 @ThreadSafe
@@ -17,6 +18,9 @@ public class AtomicExample {
     private static int clientTotal =5000;//客户数
     //原子性：要么执行完成，要不执行不完成中间不可中断，属于单线程
     private static AtomicInteger atomicInteger =  new AtomicInteger(clientTotal);//原子性
+
+   // private static LongAdder longAdder = new  LongAdder();
+    //java 8 中的新特性   采用分散散热的原理
 
     public static void main(String[] args) throws InterruptedException {
         ExecutorService pool = Executors.newCachedThreadPool();

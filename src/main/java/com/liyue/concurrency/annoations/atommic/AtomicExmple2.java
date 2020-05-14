@@ -4,6 +4,7 @@ import com.liyue.concurrency.annoations.ThreadSafe;
 import lombok.extern.slf4j.Slf4j;
 
 import java.util.concurrent.atomic.AtomicIntegerFieldUpdater;
+import java.util.concurrent.atomic.AtomicReferenceFieldUpdater;
 
 @Slf4j
 @ThreadSafe
@@ -31,6 +32,9 @@ public class AtomicExmple2 {
         updater.compareAndSet(atomicExmple2,0,2);
         log.info("更新的内容：{}",updater.get(atomicExmple2));
     }
+
+    private static AtomicReferenceFieldUpdater updater1 = AtomicReferenceFieldUpdater.newUpdater(AtomicExmple2.class,AtomicExmple2.class,"");
+
 
 
 }
