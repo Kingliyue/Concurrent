@@ -17,7 +17,7 @@ public class AtomicExample {
     private static int threadTotal = 2000;//线程数
     private static int clientTotal =5000;//客户数
     //原子性：要么执行完成，要不执行不完成中间不可中断，属于单线程
-    private static AtomicInteger atomicInteger =  new AtomicInteger(clientTotal);//原子性
+    private static AtomicInteger atomicInteger =  new AtomicInteger(clientTotal);//原子性 采用cas 有aba的问题
 
    // private static LongAdder longAdder = new  LongAdder();
     //java 8 中的新特性   采用分散散热的原理

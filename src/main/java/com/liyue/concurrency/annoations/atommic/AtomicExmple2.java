@@ -29,7 +29,7 @@ public class AtomicExmple2 {
     public static void main(String[] args) {
         AtomicExmple2 atomicExmple2 = new AtomicExmple2();
         atomicExmple2.setAge(0);
-        updater.compareAndSet(atomicExmple2,0,2);
+        updater.compareAndSet(atomicExmple2,0,2);//采用cas 有aba的问题 解决的范式是 unsafe 类中根据和底层交换
         log.info("更新的内容：{}",updater.get(atomicExmple2));
     }
 
